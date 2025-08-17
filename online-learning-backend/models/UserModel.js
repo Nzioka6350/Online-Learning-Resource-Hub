@@ -13,3 +13,7 @@ export const createUser = async (first_name, last_name, email, password, year) =
     email,
   };
 };
+//Function to get all students
+export default getStudents = async()=>{
+  
+}
