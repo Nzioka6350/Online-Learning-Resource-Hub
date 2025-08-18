@@ -1,4 +1,4 @@
-import { createUser } from "../models/UserModel.js"
+import { createUser, loginUser} from "../models/UserModel.js"
 import bcrpt from 'bcrypt'
 //Function to sign up new student
 export const signup = async (req,res) =>{
@@ -15,3 +15,19 @@ export const signup = async (req,res) =>{
       error: e.message 
     })
 }}
+
+//Function to login any user into the system
+export const login = async (req,res) =>{
+    const {email,password} = req.body
+    try{
+        const user = await loginUser(email,password);
+        return res.status(200).json(user)
+
+    }catch(e){
+        console.error("Sign in error:",e);
+        return res.status(500).json({
+            message:"Sign in failed",
+            error:e.message
+        })
+    }
+}
