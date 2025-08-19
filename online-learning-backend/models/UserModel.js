@@ -42,3 +42,5 @@ export const loginUser = async(email,password) =>{
     year: user.year,
   };
 }
+//Get all users from the database
+
