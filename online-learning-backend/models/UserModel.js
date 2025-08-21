@@ -32,7 +32,6 @@ export const loginUser = async(email,password) =>{
   if(!isMatch){
      throw new Error("Invalid credentials");
   }
-
   // 3. Return user
     return {
     id: user.student_id,
