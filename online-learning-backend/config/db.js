@@ -11,7 +11,6 @@ export const db = mysql2.createPool({
     password: process.env.DB_PASS,
     port: process.env.DB_PORT
 })
-
 // Test the connection
 db.getConnection((err, connection) => {
   if (err) {
