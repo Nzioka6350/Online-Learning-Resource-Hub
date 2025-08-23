@@ -18,5 +18,6 @@ db.getConnection((err, connection) => {
   } else {
     console.log("✅ Connected to MySQL Database!");
     connection.release(); // release the connection back to the pool
+    
   }
 });
